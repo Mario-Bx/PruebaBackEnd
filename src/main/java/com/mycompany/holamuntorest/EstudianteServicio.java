@@ -24,7 +24,7 @@ import org.o7planning.restfulcrud.model.StudentDTO;
 public class EstudianteServicio {
 
     @GET
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public List<StudentDTO> getStudent_JSON() throws ConexionException {
         List<StudentDTO> studentsDTO = new ArrayList<StudentDTO>();
         StudentFacade facade = null;
@@ -46,7 +46,7 @@ public class EstudianteServicio {
     // /contextPath/servletPath/employees/{empNo}
     @GET
     @Path("/{empNo}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public StudentDTO getEmployee(@PathParam("id") String id) throws ConexionException {
         StudentFacade facade = null;
         StudentDTO dto = null;
@@ -65,7 +65,7 @@ public class EstudianteServicio {
     // /contextPath/servletPath/employees
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public StudentDTO addStudent(StudentDTO student) throws ConexionException {
         StudentFacade facade = null;
         StudentDTO dto = null;
@@ -84,7 +84,7 @@ public class EstudianteServicio {
     // /contextPath/servletPath/employees
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public StudentDTO updateEmployee(StudentDTO student) throws ConexionException {
         StudentFacade facade = null;
         StudentDTO dto = null;
@@ -101,7 +101,7 @@ public class EstudianteServicio {
 
     @DELETE
     @Path("/{id}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public void deleteEmployee(@PathParam("id") String id) throws ConexionException {
         StudentFacade facade = null;
 
